@@ -120,6 +120,6 @@
   }
 }
 
-section {
+section, footer, header {
   @apply flex flex-col items-center;
 }
