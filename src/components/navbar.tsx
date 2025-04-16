@@ -10,13 +10,16 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { MobileNav } from "@/components/mobile-nav"
+import { cn } from "@/lib/utils"
 
-export function Navbar() {
+export function Navbar({ className }: { className?: string }) {
   return (
-    <header className="border-b sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className={
+        cn("navbar sticky border-b top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", className)
+      }>
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2 h-16 px-4 brand">
             {/* PLACEHOLDER: Add your logo SVG here */}
             <span className="font-bold text-xl">Depan.Go</span>
           </Link>
@@ -24,18 +27,14 @@ export function Navbar() {
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/" passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Home
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()} href="/">
+                  Home
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/about" passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    About
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink href="/about" className={navigationMenuTriggerStyle()}>
+                  About
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Services</NavigationMenuTrigger>
@@ -80,25 +79,19 @@ export function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/for-providers" passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    For Providers
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink href="/for-providers" className={navigationMenuTriggerStyle()}>
+                  For Providers
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/faq" passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    FAQ
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink href="/faq" className={navigationMenuTriggerStyle()}>
+                  FAQ
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/contact" passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Contact
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink href="/contact" className={navigationMenuTriggerStyle()}>
+                  Contact
+                </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>

@@ -41,7 +41,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-}:root {
+}
+
+:root {
   --radius: 1rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
@@ -120,6 +122,25 @@
   }
 }
 
+.navbar.home {
+  @apply fixed
+}
+
+.navbar.home:not(.scroll) {
+  @apply bg-transparent supports-[backdrop-filter]:bg-transparent backdrop-blur-none border-b-0
+}
+
+.navbar.home:not(.scroll) .brand,
+.navbar.home:not(.scroll) nav ul li a,
+.navbar.home:not(.scroll) nav ul li button {
+  @apply text-white;
+  --accent: rgba(0, 0, 0, 0.5);
+}
+
+.navbar.home .container {
+  @apply h-20
+}
+
 section, footer, header {
-  @apply flex flex-col items-center;
+  @apply flex flex-col items-center px-4 md:px-0;
 }
