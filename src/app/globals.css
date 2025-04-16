@@ -137,6 +137,10 @@
   --accent: rgba(0, 0, 0, 0.5);
 }
 
+:is(a[data-slot="button"]){
+  --radius: calc(infinity * 1px);
+}
+
 .navbar.home .container {
   @apply h-20
 }

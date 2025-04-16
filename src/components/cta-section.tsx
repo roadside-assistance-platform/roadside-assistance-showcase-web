@@ -1,5 +1,4 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import GooglePlayButton from "./ui/GooglePlayButton"
 
 export function CTASection() {
   return (
@@ -12,14 +11,7 @@ export function CTASection() {
               Get roadside assistance at your fingertips. Our app is available for Android devices.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" variant="secondary" asChild>
-                <Link href="https://play.google.com/store" target="_blank">
-                  <div className="flex items-center">
-                    {/* PLACEHOLDER: Add Google Play icon SVG here */}
-                    <span className="ml-2">Google Play</span>
-                  </div>
-                </Link>
-              </Button>
+              <GooglePlayButton className="w-70" />
             </div>
           </div>
           <div className="flex justify-center">

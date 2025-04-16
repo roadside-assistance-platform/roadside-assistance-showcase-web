@@ -1,4 +1,5 @@
 import Link from "next/link"
+import GooglePlayButton from "./ui/GooglePlayButton"
 
 export function Footer() {
   return (
@@ -47,7 +48,7 @@ export function Footer() {
           <div className="mt-6">
             <h3 className="font-medium text-lg mb-2">Download Our App</h3>
             <div className="flex space-x-2">
-              {/* PLACEHOLDER: Add app store badges SVGs here */}
+              <GooglePlayButton className="w-50" />
             </div>
           </div>
         </div>
